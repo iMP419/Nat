@@ -1,15 +1,15 @@
 :root {
-    --pink-light: #ffe4ef;
+    --pink-light: #ffe6f0;
     --pink-mid: #ffb6d5;
     --pink-dark: #e75480;
     --white: #fff;
     --gray-light: #f9f9fa;
-    --navbar-bg: linear-gradient(90deg, #ffe4ef 50%, #ffb6d5 100%);
-    --container-bg: #fff1f7;
+    --container-bg: #fff6fa;
     --container-border: #ffb6d5;
     --footer-bg: #ffb6d5;
     --footer-link: #e75480;
     --footer-bottom-bg: #ffe4ef;
+    --shadow: 0 2px 10px rgba(231, 84, 128, 0.09);
 }
 
 /* RESET */
@@ -31,29 +31,33 @@ body {
     position: sticky;
     top: 0;
     width: 100%;
-    background: var(--navbar-bg);
-    box-shadow: 0 2px 8px rgba(231, 84, 128, 0.07);
+    background: var(--pink-mid);
+    box-shadow: var(--shadow);
+    z-index: 99;
+}
+
+.nav-inner {
     display: flex;
     align-items: center;
     justify-content: space-between;
-    padding: 0.6rem 1.2rem;
-    z-index: 99;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0.8rem 1rem;
 }
 
 .logo-container {
     display: flex;
     align-items: center;
     justify-content: center;
-    flex: 1;
 }
 
 .logo {
-    height: 38px;
-    margin-right: 0.6rem;
+    height: 40px;
+    margin-right: 0.7rem;
 }
 
 .foundation-title {
-    font-size: 1.2rem;
+    font-size: 1.35rem;
     color: var(--pink-dark);
     font-weight: bold;
     letter-spacing: 1px;
@@ -91,7 +95,7 @@ body {
     align-items: center;
     display: none;
     transition: max-height 0.3s;
-    box-shadow: 0 2px 8px rgba(231, 84, 128, 0.12);
+    box-shadow: var(--shadow);
 }
 
 .nav-links li {
@@ -117,14 +121,12 @@ body {
     display: flex;
 }
 
+/* Desktop styles */
 @media (min-width: 750px) {
-    .navbar {
-        background: linear-gradient(90deg, #ffb6d5 50%, #ffe4ef 100%);
-        flex-direction: row;
-        padding: 0.7rem 3.2rem;
+    .nav-inner {
+        padding: 0.8rem 3rem;
     }
     .logo-container {
-        flex: none;
         justify-content: flex-start;
     }
     .foundation-title {
@@ -158,7 +160,31 @@ body {
     }
 }
 
-/* Main containers */
+/* Hero Section */
+.hero {
+    background: linear-gradient(120deg, var(--pink-light) 60%, var(--pink-mid) 100%);
+    text-align: center;
+    padding: 3rem 1.5rem 2rem 1.5rem;
+    border-radius: 12px;
+    margin: 2rem auto 1rem auto;
+    max-width: 700px;
+    box-shadow: var(--shadow);
+}
+
+.hero h1 {
+    color: var(--pink-dark);
+    font-size: 2.5rem;
+    margin-bottom: 1rem;
+    font-weight: 700;
+    letter-spacing: 2px;
+}
+
+.hero-desc {
+    font-size: 1.3rem;
+    color: #444;
+}
+
+/* Info Containers */
 .main-content {
     display: flex;
     flex-direction: column;
@@ -168,26 +194,29 @@ body {
     padding: 0 1rem;
 }
 
-.container {
+.info-container {
     background: var(--container-bg);
     border: 2px solid var(--container-border);
     border-radius: 20px;
-    box-shadow: 0 2px 10px rgba(231, 84, 128, 0.07);
+    box-shadow: var(--shadow);
     padding: 2rem 1.5rem;
     margin: 0 auto;
-    max-width: 600px;
+    max-width: 700px;
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
 }
 
 .container-header {
     font-weight: bold;
     color: var(--pink-dark);
-    font-size: 1.4rem;
-    margin-bottom: 1rem;
+    font-size: 1.35rem;
+    margin-bottom: 0.5rem;
     letter-spacing: 1px;
 }
 
 .container-body {
-    font-size: 1.1rem;
+    font-size: 1.15rem;
     color: #444;
     word-break: break-word;
 }
@@ -201,45 +230,42 @@ body {
 footer {
     background: var(--footer-bg);
     color: var(--white);
-    padding: 2rem 0 0.6rem 0;
+    padding: 2.3rem 0 0.6rem 0;
     border-top-left-radius: 20px;
     border-top-right-radius: 20px;
     margin-top: 3rem;
+    box-shadow: var(--shadow);
 }
 
-.footer-links {
+.footer-main {
     display: flex;
     flex-direction: column;
     gap: 2rem;
-    max-width: 1000px;
+    max-width: 1200px;
     margin: 0 auto;
     padding: 0 1.2rem;
 }
 
-.footer-links > div {
-    flex: 1;
-}
-
-.footer-links h3 {
-    font-size: 1.2rem;
+.footer-section h3 {
+    font-size: 1.1rem;
     color: var(--white);
     margin-bottom: 0.6rem;
     font-weight: bold;
 }
 
-.footer-links ul {
+.footer-section ul {
     list-style: none;
     padding: 0;
 }
 
-.footer-links a {
+.footer-section a {
     color: var(--footer-link);
     text-decoration: none;
     font-weight: 500;
     transition: color 0.2s;
 }
 
-.footer-links a:hover {
+.footer-section a:hover {
     color: var(--white);
 }
 
@@ -293,12 +319,12 @@ footer {
 }
 
 @media (min-width: 700px) {
-    .footer-links {
+    .footer-main {
         flex-direction: row;
         gap: 3rem;
         align-items: flex-start;
     }
-    .footer-links > div {
+    .footer-section {
         min-width: 220px;
     }
 }
