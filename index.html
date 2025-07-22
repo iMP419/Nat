@@ -3,15 +3,22 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Nat Foundation | Supporting Autistic Kids</title>
+    <title>Nat Foundation | Empowering Autistic Kids</title>
     <link rel="stylesheet" href="styles.css">
 </head>
 <body>
+    <div id="loader">
+        <div class="loader-logo">
+            <img src="logo.png" alt="Logo">
+            <span>Nat Foundation</span>
+        </div>
+        <div class="loader-spinner"></div>
+    </div>
     <!-- Navbar -->
-    <nav class="navbar sticky">
+    <nav class="navbar">
         <div class="nav-inner">
             <div class="logo-container">
-                <img src="logo.png" alt="Foundation Logo" class="logo">
+                <img src="logo.png" alt="Logo" class="logo">
                 <span class="foundation-title">Nat Foundation</span>
             </div>
             <button class="hamburger" id="hamburger-menu" aria-label="Toggle navigation">
@@ -20,43 +27,51 @@
                 <span class="bar"></span>
             </button>
             <ul class="nav-links" id="nav-links">
-                <li><a href="#">Home</a></li>
-                <li><a href="#">Mission</a></li>
-                <li><a href="#">Programs</a></li>
-                <li><a href="#">News Room</a></li>
-                <li><a href="#">Contact</a></li>
+                <li><a href="#home" class="nav-link">Home</a></li>
+                <li><a href="#mission" class="nav-link">Mission</a></li>
+                <li><a href="#programs" class="nav-link">Programs</a></li>
+                <li><a href="#newsroom" class="nav-link">News Room</a></li>
+                <li><a href="#contact" class="nav-link">Contact</a></li>
             </ul>
         </div>
     </nav>
     <!-- Hero Section -->
-    <section class="hero">
-        <h1>Empowering Autistic Kids</h1>
-        <p class="hero-desc">Creating safe, nurturing spaces for growth, learning, and joy.</p>
+    <section class="hero" id="home">
+        <div class="hero-content">
+            <h1 class="fade-in">Empowering Autistic Kids</h1>
+            <p class="fade-in-delay">Creating safe, nurturing spaces for growth, learning, and joy.</p>
+            <a href="#programs" class="btn main-btn">Explore Programs</a>
+        </div>
+        <div class="hero-bg"></div>
     </section>
     <!-- Main Content -->
-    <main class="main-content">
-        <section class="info-container">
-            <div class="container-header">Who We Are</div>
-            <div class="container-body">
-                Nat Foundation is a dedicated organization supporting autistic children and their families through inclusive programs, advocacy, and community engagement.
+    <main>
+        <section class="card-container" id="about">
+            <div class="info-card animate-card">
+                <div class="card-header">Who We Are</div>
+                <div class="card-body">
+                    Nat Foundation is a dedicated organization supporting autistic children and their families through inclusive programs, advocacy, and community engagement.
+                </div>
             </div>
-        </section>
-        <section class="info-container">
-            <div class="container-header">Mission Statement</div>
-            <div class="container-body">
-                Our mission is to empower autistic kids by providing safe spaces, resources, and opportunities for growth, learning, and connection.
+            <div class="info-card animate-card" id="mission">
+                <div class="card-header">Mission Statement</div>
+                <div class="card-body">
+                    Our mission is to empower autistic kids by providing safe spaces, resources, and opportunities for growth, learning, and connection.
+                </div>
             </div>
-        </section>
-        <section class="info-container">
-            <div class="container-header">Programs</div>
-            <div class="container-body">
-                We offer creative arts, music therapy, outdoor play, learning workshops, and family support groups tailored for every child’s needs.
+            <div class="info-card animate-card" id="programs">
+                <div class="card-header">Programs</div>
+                <div class="card-body">
+                    We offer creative arts, music therapy, outdoor play, learning workshops, and family support groups tailored for every child’s needs.
+                </div>
+                <a href="#contact" class="btn card-btn">Join Us</a>
             </div>
-        </section>
-        <section class="info-container">
-            <div class="container-header">News Room</div>
-            <div class="container-body">
-                Stay updated with the latest news, events, and success stories from Nat Foundation. <br> <a href="#">See more</a>
+            <div class="info-card animate-card" id="newsroom">
+                <div class="card-header">News Room</div>
+                <div class="card-body">
+                    Stay updated with the latest news, events, and success stories from Nat Foundation.
+                </div>
+                <a href="#" class="link newsroom-link">See more stories &rarr;</a>
             </div>
         </section>
     </main>
@@ -66,23 +81,23 @@
             <div class="footer-section">
                 <h3>Quick Links</h3>
                 <ul>
-                    <li><a href="#">Home</a></li>
-                    <li><a href="#">Mission</a></li>
-                    <li><a href="#">Programs</a></li>
-                    <li><a href="#">News Room</a></li>
-                    <li><a href="#">Contact</a></li>
+                    <li><a href="#home" class="footer-link">Home</a></li>
+                    <li><a href="#mission" class="footer-link">Mission</a></li>
+                    <li><a href="#programs" class="footer-link">Programs</a></li>
+                    <li><a href="#newsroom" class="footer-link">News Room</a></li>
+                    <li><a href="#contact" class="footer-link">Contact</a></li>
                 </ul>
             </div>
-            <div class="footer-section">
+            <div class="footer-section" id="contact">
                 <h3>Contact Us</h3>
-                <p>Email: support@natfoundation.org</p>
-                <p>Phone: +123 456 7890</p>
+                <p>Email: <a href="mailto:support@natfoundation.org" class="footer-link">support@natfoundation.org</a></p>
+                <p>Phone: <a href="tel:+1234567890" class="footer-link">+123 456 7890</a></p>
             </div>
             <div class="footer-section">
                 <h3>Newsletter</h3>
                 <form id="newsletter-form">
                     <input type="email" id="newsletter-email" placeholder="Your email" required>
-                    <button type="submit">Subscribe</button>
+                    <button type="submit" class="btn newsletter-btn">Subscribe</button>
                 </form>
                 <div id="newsletter-message"></div>
             </div>
