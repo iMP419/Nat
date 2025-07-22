@@ -1,6 +1,9 @@
 const toggle = document.getElementById('theme-toggle');
 toggle.addEventListener('click', () => {
   document.body.classList.toggle('dark');
+  // Accessibility: update aria-pressed
+  const isDark = document.body.classList.contains('dark');
+  toggle.setAttribute('aria-pressed', isDark ? 'true' : 'false');
 });
 const sections = document.querySelectorAll('.section');
 function revealOnScroll() {
