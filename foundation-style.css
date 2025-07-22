@@ -1,0 +1,79 @@
+body {
+  margin: 0;
+  font-family: 'Segoe UI', sans-serif;
+  transition: background 0.3s, color 0.3s;
+  background: white;
+  color: black;
+}
+body.dark {
+  background: #111;
+  color: #eee;
+}
+.section {
+  padding: 60px 20px;
+  opacity: 0;
+  transform: translateY(30px);
+  transition: all 0.6s ease-out;
+}
+.section.show {
+  opacity: 1;
+  transform: translateY(0);
+}
+.section.alt {
+  background: #f8f8f8;
+}
+body.dark .section.alt {
+  background: #1a1a1a;
+}
+.logo-container {
+  text-align: center;
+  padding: 80px 0;
+}
+.logo {
+  max-width: 250px;
+}
+.scroll-arrow {
+  font-size: 2rem;
+  color: pink;
+  animation: float 2s infinite ease-in-out;
+}
+@keyframes float {
+  0% { transform: translateY(0); }
+  50% { transform: translateY(-10px); }
+  100% { transform: translateY(0); }
+}
+.news-container {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 20px;
+}
+.news-card {
+  background: white;
+  border: 1px solid pink;
+  padding: 10px;
+  max-width: 300px;
+  transition: transform 0.3s;
+}
+.news-card img {
+  width: 100%;
+}
+.news-card:hover {
+  transform: scale(1.05);
+}
+.footer-content {
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
+}
+.footer-bottom {
+  text-align: center;
+  margin-top: 20px;
+}
+.icon {
+  display: inline-block;
+  border: 2px solid pink;
+  border-radius: 50%;
+  padding: 10px;
+  margin: 0 5px;
+  color: pink;
+}
